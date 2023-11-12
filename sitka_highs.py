@@ -9,6 +9,9 @@ with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
 
+    for index, column_header in enumerate(header_row):
+        print(index, column_header)
+
     # Get dates, and high and low temperatures from this file.
     dates, highs, lows = [], [], []
     for row in reader:
@@ -34,4 +37,3 @@ plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
 
 plt.show()
-
